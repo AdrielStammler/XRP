@@ -54,6 +54,7 @@ public class RobotContainer {
      * JoystickButton}.
      */
     private void configureButtonBindings() {
+        drivetrain.setDefaultCommand(getArcadeDriveCommand());
 
         m_chooser.setDefaultOption("Tree Stone Blue", new TreeStoneBlue(drivetrain, arm));
         SmartDashboard.putData(m_chooser);
