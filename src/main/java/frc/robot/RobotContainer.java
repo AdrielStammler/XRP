@@ -12,13 +12,12 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.button.CommandXboxController;
 import edu.wpi.first.wpilibj2.command.button.JoystickButton;
+import frc.robot.autos.FacePlant;
 import frc.robot.commands.ArcadeDrive;
-import frc.robot.commands.TreeStoneBlue;
+import frc.robot.autos.TreeStoneBlue;
 import frc.robot.commands.TankDrive;
 import frc.robot.subsystems.XRPArm;
 import frc.robot.subsystems.XRPDrivetrain;
-
-import static edu.wpi.first.wpilibj2.command.Commands.runOnce;
 
 /**
  * This class is where the bulk of the robot should be declared. Since
@@ -56,6 +55,7 @@ public class RobotContainer {
     private void configureButtonBindings() {
         drivetrain.setDefaultCommand(getArcadeDriveCommand());
 
+        m_chooser.setDefaultOption("Face Plant", new FacePlant(drivetrain, arm));
         m_chooser.setDefaultOption("Tree Stone Blue", new TreeStoneBlue(drivetrain, arm));
         SmartDashboard.putData(m_chooser);
     }

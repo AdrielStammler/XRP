@@ -22,7 +22,7 @@ public class DriveDistance extends Command {
         this.drivetrain = drivetrain;
         this.speed = speed;
         distance = inches;
-        rightScale = 1;
+        rightScale = 0.99;
 
         addRequirements(drivetrain);
     }
